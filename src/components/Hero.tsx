@@ -10,10 +10,56 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-secondary/30 overflow-hidden">
-      {/* Background decoration */}
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0" 
+             style={{
+               backgroundImage: `
+                 linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                 linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+               `,
+               backgroundSize: '50px 50px',
+               animation: 'grid-move 20s linear infinite'
+             }}>
+        </div>
+      </div>
+
+      {/* Tech Circuit Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none">
+          <defs>
+            <pattern id="circuit" patternUnits="userSpaceOnUse" width="200" height="200">
+              <path d="M50 50h20v20h20v20h20M150 50h-20v20h-20v20h-20M50 150h20v-20h20v-20h20M150 150h-20v-20h-20v-20h-20" 
+                    stroke="hsl(var(--tech-blue))" strokeWidth="1" opacity="0.3"/>
+              <circle cx="50" cy="50" r="3" fill="hsl(var(--tech-teal))" opacity="0.5"/>
+              <circle cx="150" cy="150" r="3" fill="hsl(var(--primary))" opacity="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#circuit)"/>
+        </svg>
+      </div>
+
+      {/* Floating Geometric Shapes */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-tech-blue/20 rotate-45 animate-pulse" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-6 h-6 border-2 border-tech-teal/30 rotate-12" style={{animation: 'spin 15s linear infinite'}}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-primary/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-8 h-1 bg-gradient-hero opacity-40" style={{animation: 'pulse 3s ease-in-out infinite'}}></div>
+        <div className="absolute bottom-1/3 right-1/5 w-5 h-5 border border-tech-navy/20" style={{animation: 'bounce 4s ease-in-out infinite'}}></div>
+      </div>
+
+      {/* Dynamic Gradient Orbs */}
       <div className="absolute inset-0 bg-gradient-hero opacity-5"></div>
-      <div className="absolute top-20 right-20 w-72 h-72 bg-tech-teal/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 right-20 w-72 h-72 bg-tech-teal/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s'}}></div>
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" style={{animation: 'pulse 6s ease-in-out infinite'}}></div>
+      
+      {/* Tech Lines */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-tech-blue to-transparent"></div>
+        <div className="absolute bottom-1/4 right-0 w-1/3 h-px bg-gradient-to-l from-transparent via-tech-teal to-transparent"></div>
+        <div className="absolute left-1/4 top-0 w-px h-1/3 bg-gradient-to-b from-transparent via-primary to-transparent"></div>
+        <div className="absolute right-1/4 bottom-0 w-px h-1/3 bg-gradient-to-t from-transparent via-tech-navy to-transparent"></div>
+      </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
