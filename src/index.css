@@ -150,4 +150,46 @@ All colors MUST be HSL.
     0% { transform: translate(0, 0); }
     100% { transform: translate(50px, 50px); }
   }
+  
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0) translateX(0);
+      opacity: 0.3;
+    }
+    50% { 
+      transform: translateY(-20px) translateX(10px);
+      opacity: 0.6;
+    }
+  }
+  
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-right {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(0); }
+  }
+  
+  @keyframes slide-left {
+    0%, 100% { transform: translateX(100%); }
+    50% { transform: translateX(0); }
+  }
+  
+  @keyframes slide-down {
+    0%, 100% { transform: translateY(-100%); }
+    50% { transform: translateY(0); }
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
 }
